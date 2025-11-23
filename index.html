@@ -2,116 +2,132 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Liste de Noël de Ivann</title>
+    <title>Liste de Noël de Mouna et Gabriel</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             padding: 20px;
-            background:#f6f6f6;
+            background: #0a0a1a;
+            color: white;
         }
-        h1 {
+        h1, h2 {
             text-align: center;
+            margin-bottom: 30px;
         }
         .item {
-            background: white;
+            background: rgba(255,255,255,0.15);
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 20px;
-            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(4px);
         }
         .item a {
             font-weight: bold;
-            color: #0066cc;
+            color: #aee4ff;
             text-decoration: none;
+            font-size: 18px;
         }
-    </style>
-<style>
-        body{font-family:Arial,sans-serif;padding:20px;background:#0a0a1a;color:white;}
-        h1{text-align:center;margin-bottom:30px;}
-        .item{background:rgba(255,255,255,0.15);padding:15px;border-radius:10px;margin-bottom:20px;border:1px solid rgba(255,255,255,0.2);backdrop-filter:blur(4px);}        
-        .item a{font-weight:bold;color:#aee4ff;text-decoration:none;font-size:18px;}
-        .snow{pointer-events:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:999;overflow:hidden}
-        .snowflake{position:absolute;top:-10px;color:#fff;font-size:1em;opacity:0.9;animation:snowfall linear infinite}
-        @keyframes snowfall{0%{transform:translateY(0) rotate(0deg)}100%{transform:translateY(110vh) rotate(360deg)}}
+        .snow {
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            overflow: hidden;
+        }
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            color: #fff;
+            font-size: 1em;
+            opacity: 0.9;
+            animation: snowfall linear infinite;
+        }
+        @keyframes snowfall {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+        #ground {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: white;
+            transition: height 0.5s;
+            z-index: 998;
+        }
     </style>
 </head>
 <body>
 
-<h1>🎄 Liste de Noël de Ivann 🎄</h1>
+<h1>🎄 Liste de Noël 🎄</h1>
 
+<h2>Mouna</h2>
 <div class="item">
     <a href="https://www.bukifrance.com/fr/electricite/982-flipper-3700802104971.html" target="_blank">
         Flipper – Buki France
     </a>
 </div>
-
 <div class="item">
-    <a href="https://www.bukifrance.com/fr/robots-a-construire/107-robot-tibo-3700802102243.html" target="_blank">
-        Robot Tibo – Buki France
+    <a href="https://www.bukifrance.com/robots-pour-coder/474-robot-kodo-3700802102892.html" target="_blank">
+        Robot Kodo – Buki France
     </a>
 </div>
-
 <div class="item">
     <a href="https://www.amazon.fr/Educa-Logique-Familial-%C3%89ducatif-20007/dp/B0D6C2PF3M" target="_blank">
-        Jeu 100% Logique
+        Jeu Éducatif Educa Logique
     </a>
 </div>
-
 <div class="item">
     <a href="https://www.lego.com/fr-fr/product/mosaic-maker-40179" target="_blank">
-    LEGO Mosaic Maker
-        <div>
+        LEGO Mosaic Maker
     </a>
-    <div class="item">
-    <a href="https://www.espritjeu.com/flipside.html?srsltid=AfmBOorcyvh--wGGKm_I-4qZpELbujxLvPFIEulkKGl8424ZeYCEXrnK" target="_blank">
-        Flipside
 </div>
-
 <div class="item">
-    Drone de bonne qualité qui fait des photos
+    <a href="https://www.king-jouet.be/jeu-jouet/jeux-societes/jeux-strategie-reflexion/ref-968689-flipslide.htm" target="_blank">
+        Flipside – Jeu de réflexion
+    </a>
+</div>
+<div class="item">
+    Drone de bonne qualité
+</div>
+
+<h2>Gabriel</h2>
+<div class="item">
+    Cadeau 1 pour Gabriel
+</div>
+<div class="item">
+    Cadeau 2 pour Gabriel
+</div>
+<div class="item">
+    Cadeau 3 pour Gabriel
 </div>
 
 <div class="snow"></div>
+<div id="ground"></div>
 
 <script>
 function createSnowflakes(){
-  const snowContainer=document.querySelector('.snow');
-  for(let i=0;i<70;i++){
-    const flake=document.createElement('div');
-    flake.className='snowflake';
-    flake.textContent='❄';
-    flake.style.left=Math.random()*100+'vw';
-    flake.style.fontSize=(Math.random()*10+8)+'px';
-    flake.style.animationDuration=(Math.random()*5+5)+'s';
-    flake.style.animationDelay=Math.random()*5+'s';
-    snowContainer.appendChild(flake);
-  }
-}
-createSnowflakes();
-</script>
-
-<div class="snow"></div>
-<div id="ground" style="position:fixed;bottom:0;left:0;width:100%;height:0;background:white;transition:height 0.5s;z-index:998;"></div>
-
-<script>
-function createSnowflakes(){
-  const snowContainer=document.querySelector('.snow');
-  for(let i=0;i<70;i++){
-    const flake=document.createElement('div');
-    flake.className='snowflake';
-    flake.textContent='❄';
-    flake.style.left=Math.random()*100+'vw';
-    flake.style.fontSize=(Math.random()*10+8)+'px';
-    flake.style.animationDuration=(Math.random()*5+5)+'s';
-    flake.style.animationDelay=Math.random()*5+'s';
+  const snowContainer = document.querySelector('.snow');
+  for (let i = 0; i < 70; i++){
+    const flake = document.createElement('div');
+    flake.className = 'snowflake';
+    flake.textContent = '❄';
+    flake.style.left = Math.random() * 100 + 'vw';
+    flake.style.fontSize = (Math.random() * 10 + 8) + 'px';
+    flake.style.animationDuration = (Math.random() * 5 + 5) + 's';
+    flake.style.animationDelay = Math.random() * 5 + 's';
     snowContainer.appendChild(flake);
 
-    // Accumulation au sol
-    flake.addEventListener('animationend', ()=>{
-      const ground=document.getElementById('ground');
-      let currentHeight=parseInt(ground.style.height);
-      if(currentHeight<150){
-        ground.style.height=(currentHeight+1)+'px';
+    flake.addEventListener('animationend', () => {
+      const ground = document.getElementById('ground');
+      let currentHeight = parseInt(ground.style.height);
+      if (currentHeight < 150) {
+        ground.style.height = (currentHeight + 1) + 'px';
       }
     });
   }
